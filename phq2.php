@@ -40,7 +40,7 @@ $hopeNo = "<b>Question 1:</b> - You said you <i>are not feeling </i>hopeless or 
 $hopeYes = "<b>Question 1:</b> - You said you <i>are feeling</i> hopeless or worthless. The study data indicates that a positive response to this question generally is correct. However, compared to the PHQ-9, if you answered that you were NOT feeling hopeless or worthless here, about 20% of the time, this question would give wrong results.";
 $suicideNo = "<b>Question 2:</b> - You said you <i>are not feeling </i> thoughts of suicide or self-harm. Thankfully, you don't appear to be having any active suicidal ideation. Yeah! In the research study, there wasn't enough data from this question to make it statistically significant.";
 $suicideYes = "<b>Question 2:</b> - You said you <i>are having</i> thoughts of suicide or self-harm. Your response should trigger a call for follow-up and safety precautions, pending further assessment. One potential problem with this question, however, is that there is no look-back time frame. Moreover, there is no inquiry about previous suicidal behavior. Literature suggests that suicidal ideation + previous suicidal behavior comprise significant risk for suicide.";
-$phq_total = $p1 + $p2
+$phq_total = $p1 + $p2;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["hope"])) {
