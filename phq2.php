@@ -6,7 +6,6 @@ body {
 	font-family: verdana;
     background-color: lightblue;
 }
-
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -16,7 +15,6 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -28,7 +26,6 @@ input[type=submit] {
     cursor: pointer;
 	font-size:20px;
 }
-
 h1 {
     color: black;
     text-align: center;
@@ -43,7 +40,6 @@ p {
 h3 {
     font-family: verdana;
 }
-
 h4 {
     font-family: verdana;
 }
@@ -65,8 +61,6 @@ $howOften1 = "Several days";
 $howOften2 = "More than half the days";
 $howOften3 = "Nearly every days"; 
 $phq_total = $p1 + $p2 + $p3;
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["hope"])) {
     $hopeErr = "The question about hope is required";
@@ -88,7 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $p1 = test_input($_POST["p1"]);
     }
-
   if (empty($_POST["p2"])) {
     $p2Err = "The second question on the PHQ-9 is required.";
   } else {
@@ -110,7 +103,7 @@ function test_input($data) {
 ?>
 
 <h1>Current Screen (CS) Compared to the Patient Health Questionnaire-9 (PHQ-9) Study</h1>
-<h3>You can take both screens right here!</h3>
+<h3>You can take both screens right here! This page is stillunder development. Please do not enter any personal information. Instead, please use an imaginary person. This is for educational purposes only. The data you enter is not saved in any database. The domain hosting this page is managed by the study PI. There are no links to anywhere else on this domain.</h3>
 <hr>
 <h3>The <b>Current Screen</b> asks two questions:</h3>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
@@ -155,7 +148,6 @@ function test_input($data) {
 
 <?php
 $phq_total = $p1 + $p2 +$p3;
-
 echo "<h3>When you've completed the above forms, your answers will show below:</h3>";
 echo "<hr>";
 echo "<h3>Your Current Screen (CS) answers:</h3>";
