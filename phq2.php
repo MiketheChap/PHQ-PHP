@@ -6,6 +6,7 @@ body {
 	font-family: verdana;
     background-color: lightblue;
 }
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -15,6 +16,7 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -26,6 +28,7 @@ input[type=submit] {
     cursor: pointer;
 	font-size:20px;
 }
+
 h1 {
     color: black;
     text-align: center;
@@ -40,6 +43,7 @@ p {
 h3 {
     font-family: verdana;
 }
+
 h4 {
     font-family: verdana;
 }
@@ -50,8 +54,10 @@ h4 {
 
 <?php
 // define variables and set to empty values
+// you need to add the error variables for all 9 PHQ-9 questions below 
 $hopeErr = $suicideErr = $p1Err = $p2Err = $p3Err = "";
-$hope = $suicide = $p1 = $p2;
+// you need to add the regular variables for all 9 PHQ-9 questions below
+$hope = $suicide = $p1 = $p2 = $p3;
 $hopeNo = "<b>Question 1:</b> You said you <i>are not feeling </i>hopeless or worthless. We're glad to hear that. But, in our study comparing the CS to the PHQ-9, 20% of patients saying they were not feeling hopeless or worthless on the CS, actually met the diagnostic criteria for a provisional diagnosis of Minor depression, Dysthymia, or Major Depression, mild.";
 $hopeYes = "<b>Question 1:</b> You said you <i>are feeling</i> hopeless or worthless. The study data indicates that a positive response to this question generally is correct. However, compared to the PHQ-9, if you answered that you were NOT feeling hopeless or worthless here, about 20% of the time, this question would give wrong results.";
 $suicideNo = "<b>Question 2:</b> You said you <i>are not feeling </i> thoughts of suicide or self-harm. Thankfully, you don't appear to be having any active suicidal ideation. Yeah! In the research study, there wasn't enough data from this question to make it statistically significant.";
@@ -60,14 +66,17 @@ $howOften0 = "Not at all";
 $howOften1 = "Several days";
 $howOften2 = "More than half the days";
 $howOften3 = "Nearly every days"; 
+// you need to add the individual questions on the PHQ to get the total
 $phq_total = $p1 + $p2 + $p3;
+
+// for each question, you need to tell it what to do as far as the input goes
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // hope
   if (empty($_POST["hope"])) {
     $hopeErr = "The question about hope is required";
   } else {
     $hope = test_input($_POST["hope"]);
     // check if name only contains letters and whitespace
-    
   }
   
   if (empty($_POST["suicide"])) {
@@ -81,17 +90,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $p1Err = "The first question on the PHQ-9 is required.";
   } else {
     $p1 = test_input($_POST["p1"]);
+	// check if name only contains letters and whitespace
     }
+
   if (empty($_POST["p2"])) {
     $p2Err = "The second question on the PHQ-9 is required.";
   } else {
     $p2 = test_input($_POST["p2"]);
+	// check if name only contains letters and whitespace
   }
   
   if (empty($_POST["p3"])) {
     $p3Err = "The third question on the PHQ-9 is required.";
   } else {
     $p3 = test_input($_POST["p3"]);
+	// check if name only contains letters and whitespace
   }
 }
 function test_input($data) {
@@ -103,7 +116,7 @@ function test_input($data) {
 ?>
 
 <h1>Current Screen (CS) Compared to the Patient Health Questionnaire-9 (PHQ-9) Study</h1>
-<h3>You can take both screens right here! This page is stillunder development. Please do not enter any personal information. Instead, please use an imaginary person. This is for educational purposes only. The data you enter is not saved in any database. The domain hosting this page is managed by the study PI. There are no links to anywhere else on this domain.</h3>
+<h3>You can take both screens right here!</h3>
 <hr>
 <h3>The <b>Current Screen</b> asks two questions:</h3>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
@@ -121,7 +134,6 @@ function test_input($data) {
   <h3>The Patient Health Questionnaire-9 (PHQ-9)asks nine questions:</h3>
   <h4>In the <b>past two weeks</b> how often have you been bothered by any of the following problems:</h4>
   <h5>1. Little interest or pleasure in doing things</h5>
-
   <input type="radio" name="p1" <?php if (isset($p1) && $p1=="0") echo "checked";?> value="0"> Not At All<br>
   <input type="radio" name="p1" <?php if (isset($p1) && $p1=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p1" <?php if (isset($p1) && $p1=="2") echo "checked";?> value="2"> More than half the days<br>
@@ -148,6 +160,7 @@ function test_input($data) {
 
 <?php
 $phq_total = $p1 + $p2 +$p3;
+
 echo "<h3>When you've completed the above forms, your answers will show below:</h3>";
 echo "<hr>";
 echo "<h3>Your Current Screen (CS) answers:</h3>";
@@ -168,6 +181,7 @@ echo "<li>1 = Several days</li>";
 echo "<li>2 = More than half the days</li>";
 echo "<li>2 = Nearly every day</li>";
 echo "</ul>";
+// add results for each question below and conclude with the total
 echo "<h4>Your score on little interest or pleasure was " . $p1 . "</h4>";
 echo "<h4>Your score on feeling down, depressed or hopeless was " . $p2 . "</h4>";
 echo "<h4>Your score on falling asleep, staying asleep or sleeping too much was " . $p3 . "</h4>";
