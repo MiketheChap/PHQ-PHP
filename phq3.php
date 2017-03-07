@@ -4,7 +4,7 @@
 <style>
 body {
 	font-family: arial;
-    background-color: lightblue;
+    background-color: #F0E68C;
 }
 
 input[type=text], select {
@@ -167,68 +167,68 @@ function test_input($data) {
   <h3>The Patient Health Questionnaire-9 (PHQ-9)asks nine questions:</h3>
   
   <h4>In the <b>past two weeks</b> how often have you been bothered by any of the following problems:</h4>
-  <h5>1. Little interest or pleasure in doing things</h5>
+  <h4>1. Little interest or pleasure in doing things</h4>
   <input type="radio" name="p1" <?php if (isset($p1) && $p1=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p1" <?php if (isset($p1) && $p1=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p1" <?php if (isset($p1) && $p1=="2") echo "checked";?> value="2"> More than half the days<br>
   <input type="radio" name="p1" <?php if (isset($p1) && $p1=="3") echo "checked";?> value="3"> Nearly every day
   <span class="error">* <?php echo $p1Err;?></span>
   
-  <h5>2. Feeling down, depressed or hopeless</h5>
+  <h4>2. Feeling down, depressed or hopeless</h4>
   <input type="radio" name="p2" <?php if (isset($p2) && $p2=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p2" <?php if (isset($p2) && $p2=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p2" <?php if (isset($p2) && $p2=="2") echo "checked";?> value="2"> More than half the days<br>
   <input type="radio" name="p2" <?php if (isset($p2) && $p2=="3") echo "checked";?> value="3"> Nearly every day
   <span class="error">* <?php echo $p2Err;?></span>
   
-  <h5>3. Trouble falling asleep, staying asleep, or sleeping too much?</h5>
+  <h4>3. Trouble falling asleep, staying asleep, or sleeping too much?</h4>
   <input type="radio" name="p3" <?php if (isset($p3) && $p3=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p3" <?php if (isset($p3) && $p3=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p3" <?php if (isset($p3) && $p3=="2") echo "checked";?> value="2"> More than half the days<br>
   <input type="radio" name="p3" <?php if (isset($p3) && $p3=="3") echo "checked";?> value="3"> Nearly every day
   <span class="error">* <?php echo $p3Err;?></span>
   
-  <h5>4. Feeling tired or having little energy?</h5>
+  <h4>4. Feeling tired or having little energy?</h4>
   <input type="radio" name="p4" <?php if (isset($p4) && $p4=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p4" <?php if (isset($p4) && $p4=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p4" <?php if (isset($p4) && $p4=="2") echo "checked";?> value="2"> More than half the days<br>
   <input type="radio" name="p4" <?php if (isset($p4) && $p4=="3") echo "checked";?> value="3"> Nearly every day
   <span class="error">* <?php echo $p4Err;?></span>
   
-  <h5>5. Poor appetite or overeating?</h5>
+  <h4>5. Poor appetite or overeating?</h4>
   <input type="radio" name="p5" <?php if (isset($p5) && $p5=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p5" <?php if (isset($p5) && $p5=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p5" <?php if (isset($p5) && $p5=="2") echo "checked";?> value="2"> More than half the days<br>
   <input type="radio" name="p5" <?php if (isset($p5) && $p5=="3") echo "checked";?> value="3"> Nearly every day
   <span class="error">* <?php echo $p5Err;?></span>
   
-  <h5>6. Feeling bad about yourself — or that you are a failure or
-have let yourself or your family down?</h5>
+  <h4>6. Feeling bad about yourself — or that you are a failure or
+have let yourself or your family down?</h4>
   <input type="radio" name="p6" <?php if (isset($p6) && $p6=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p6" <?php if (isset($p6) && $p6=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p6" <?php if (isset($p6) && $p6=="2") echo "checked";?> value="2"> More than half the days<br>
   <input type="radio" name="p6" <?php if (isset($p6) && $p6=="3") echo "checked";?> value="3"> Nearly every day
   <span class="error">* <?php echo $p6Err;?></span>
   
-  <h5>7. Trouble concentrating on things, such as reading the
-newspaper or watching television?</h5>
+  <h4>7. Trouble concentrating on things, such as reading the
+newspaper or watching television?</h4>
   <input type="radio" name="p7" <?php if (isset($p7) && $p7=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p7" <?php if (isset($p7) && $p7=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p7" <?php if (isset($p7) && $p7=="2") echo "checked";?> value="2"> More than half the days<br>
   <input type="radio" name="p7" <?php if (isset($p7) && $p7=="3") echo "checked";?> value="3"> Nearly every day
   <span class="error">* <?php echo $p7Err;?></span>
   
-  <h5>8. Moving or speaking so slowly that other people could have
+  <h4>8. Moving or speaking so slowly that other people could have
 noticed? Or the opposite — being so fidgety or restless
-that you have been moving around a lot more than usual?</h5>
+that you have been moving around a lot more than usual?</h4>
   <input type="radio" name="p8" <?php if (isset($p8) && $p8=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p8" <?php if (isset($p8) && $p8=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p8" <?php if (isset($p8) && $p8=="2") echo "checked";?> value="2"> More than half the days<br>
   <input type="radio" name="p8" <?php if (isset($p8) && $p8=="3") echo "checked";?> value="3"> Nearly every day
   <span class="error">* <?php echo $p8Err;?></span>
   
-  <h5>9. Thoughts that you would be better off dead or of hurting
-yourself in some way?</h5>
+  <h4>9. Thoughts that you would be better off dead or of hurting
+yourself in some way?</h4>
   <input type="radio" name="p9" <?php if (isset($p9) && $p9=="not at all") echo "checked";?> value="not at all"> Not At All<br>
   <input type="radio" name="p9" <?php if (isset($p9) && $p9=="1") echo "checked";?> value="1"> Several Days<br>
   <input type="radio" name="p9" <?php if (isset($p9) && $p9=="2") echo "checked";?> value="2"> More than half the days<br>
@@ -293,10 +293,10 @@ echo "<h3>Depression Risk:</h3>";
 	if ($hope == "yes"){
   echo "<h4>" . $hopeYes . "</h4>";
 }
-echo "<h4><i>PHQ-9 Screen</i> Results for comparison:</h4>";  
+echo "<h4><i>versus PHQ-9 Screen</i> Results:</h4>";  
 if ($phq_total  > 20){
-	echo "<h4>PHQ-9 Screen: Your overall PHQ-9 score suggests you could have :<i>Major Depression (Severe)</i>. As well, you may be <warning>at risk for suicide.</warning></h4>";
-	echo "<h4>A screen such as the <i>Columbia-Suicide Severity Rating Scale</i> might help determine the risk level.</h4>";
+	echo "<h4>PHQ-9 Screen: Your overall PHQ-9 score suggests you could have <i>Major Depression (Severe)</i>. As well, you may be <warning>at risk for suicide.</warning>";
+	echo "A screen such as the <i>Columbia-Suicide Severity Rating Scale</i> might help determine more precisely the suicide risk level.</h4>";
 } elseif ($phq_total  > 10){
   echo "<h4>PHQ-9 Screen: Your overall PHQ-9 score suggests you may have <i>moderate depression</i>.</h4>";
 } elseif ($phq_total < 10){
@@ -309,14 +309,14 @@ echo "<h3>Suicide Risk:</h3>";
 if ($suicide == "yes"){
 	echo "The <i>Current Screen</i> indicates you ARE having thoughts of suicide or self-harm. There is no clear indication about how often you have these thoughts, how recently, and if there is any suicidal behavior in your history.</h4>";
 }
-echo "<h4>The PHQ-9:</h4>";
+echo "<h4>Versus the PHQ-9:</h4>";
 if ($p9 != "not at all"){
-  echo "<h4>PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates that <warning>within the past two weeks you have had thoughts that you would be better off dead or of hurting yourself</warning>. This has occurred between several days and nearly every day (if I were a better programmer, I could tell you more accurately!).</h4>";
-  echo "<h4><warning>A screen such as the Columbia-Suicide Severity Rating Scale might help determine the risk level.</warning></h4>";
+  echo "<h4>PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates that <warning>within the past two weeks you have had thoughts that you would be better off dead or of hurting yourself</warning>. This has occurred between several days and nearly every day (if I were a better programmer, I could tell you more accurately!).";
+  echo "<warning>A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.</warning></h4>";
 }
 if ($phq_total > 20){
-  echo "<h4>PHQ-9 Screen Overall Score <warning>suggests suicide risk</warning>: Your overall PHQ-9 score suggests you may be severely depressed:<i>Major Depressive Disorder</i>. As well, you may be <warning>at risk for suicide.</warning></h4>";
-  echo "<h4><warning>A screen such as the Columbia-Suicide Severity Rating Scale might help determine the risk level.</warning></h4>";  
+  echo "<h4>PHQ-9 Screen Overall Score <warning>suggests suicide risk</warning>: Your overall PHQ-9 score suggests you may be severely depressed:<i>Major Depressive Disorder</i>. As well, you may be <warning>at risk for suicide.</warning>";
+  echo "<warning>A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.</warning></h4>";  
 }
 echo "<br>";
 echo "<h5><b>References:</b><sup>1</sup>Kroenke K, Spitzer RL, Williams JBW. The PHQ-9. J Gen Intern Med. 2001 Sep;16(9):606–613.</h4>";
