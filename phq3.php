@@ -47,6 +47,10 @@ h3 {
 h4 {
     font-family: arial;
 }
+	
+h5 {
+    font-family: arial;
+}	
 
 warning {
 	color: red;
