@@ -2,8 +2,11 @@
 <html>
 <head>
 <style>
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
+	
 body {
-	font-family: arial;
+	font-family: 'Roboto', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
     background-color: #F0E68C;
 }
 
@@ -38,18 +41,22 @@ h2 {
     text-align: left;
 }
 p {
-    font-family: arial;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 h3 {
-    font-family: arial;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 h4 {
-    font-family: arial;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 	
 h5 {
-    font-family: arial;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }	
 
 warning {
