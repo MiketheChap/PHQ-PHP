@@ -96,10 +96,11 @@ warning {
 // define variables and set to empty values
 $hopeErr = $suicideErr = $p1Err = $p2Err = $p3Err = $p4Err = $p5Err = $p6Err = $p7Err = $p8Err = $p9Err = "";
 $hope = $suicide = $p1 = $p2 = $p3 = $p4 = $p5 = $p6 = $p7 = $p8 = $p9 = "";
+//$phq_total = 0;
 $hopeNo = "You said you <i>are not feeling </i>hopeless or worthless. We're glad to hear that. But, in our study comparing the CS to the PHQ-9, 20% of patients saying they were not feeling hopeless or worthless on the CS, actually met the diagnostic criteria for a provisional diagnosis of Minor depression, Dysthymia, or Major Depression, mild.";
 $hopeYes = "You said you <i>are feeling</i> hopeless or worthless. The study data indicates that a positive response to this question generally is correct. However, compared to the PHQ-9, if you answered that you were NOT feeling hopeless or worthless here, about 20% of the time, this question would give wrong results.In any case, feelings of hopelessness and worthlessness can be predictive of suicide.";
-$suicideNo = "<b>Current Screen Question 2:</b> You said you <i>are not feeling </i> thoughts of suicide or self-harm. Thankfully, you don't appear to be having any active suicidal ideation. Yeah! In the research study, there wasn't enough data from this question to make it statistically significant.";
-$suicideYes = "<b>Current Screen Question 2:</b> You said you <i><warning>are having</warning></i> thoughts of suicide or self-harm. Your response should trigger a call for follow-up and safety precautions, pending further assessment. One potential problem with this question, however, is that there is no look-back time frame. Moreover, there is no inquiry about previous suicidal behavior. Literature suggests that suicidal ideation + previous suicidal behavior comprise significant risk for suicide.";
+$suicideNo = "<b>Current Screen Question 2:</b> You said you <i>are not having </i> thoughts of suicide or self-harm. Thankfully, you don't appear to be having any active suicidal ideation. Yeah! In the research study, there wasn't enough data from this question to make it statistically significant.";
+$suicideYes = "<b>Current Screen Question 2:</b> You said you <b><are having</b> thoughts of suicide or self-harm. Your response should trigger a call for follow-up and safety precautions, pending further assessment. One potential problem with this question, however, is that there is no look-back time frame. Moreover, there is no inquiry about previous suicidal behavior. Literature suggests that suicidal ideation + previous suicidal behavior comprise significant risk for suicide.";
 $howOften0 = "Not at all";
 $howOften1 = "Several days";
 $howOften2 = "More than half the days";
@@ -210,7 +211,7 @@ and Mary Muldoon at Baylor Hamilton Heart and Vascular Hospital</center></h3>
   
   <tr>
   <td width="50%"><h4>1. Little interest or pleasure in doing things</h4></td>
-  <td><input type="radio" name="p1" <?php if (isset($p1) && $p1=="not at all") echo "checked";?> value="not at all"> Not At All</td>
+  <td><input type="radio" name="p1" <?php if (isset($p1) && $p1=="Not at all") echo "checked";?> value="Not at all"> Not At All</td>
   <td><input type="radio" name="p1" <?php if (isset($p1) && $p1=="1") echo "checked";?> value="1"> Several Days</td>
   <td><input type="radio" name="p1" <?php if (isset($p1) && $p1=="2") echo "checked";?> value="2"> More than half the days</td>
   <td><input type="radio" name="p1" <?php if (isset($p1) && $p1=="3") echo "checked";?> value="3"> Nearly every day</td>
@@ -298,7 +299,6 @@ yourself in some way?</h4></td>
 </form>
 
 <?php
-$phq_total = (int)$p1 + (int)$p2 + (int)$p3 + (int)$p4 + (int)$p5 + (int)$p6 + (int)$p7 + (int)$p8 + (int)$p9;
 echo "<h3>When you've completed the above forms, your answers will show below:</h3>";
 echo "<hr>";
 echo "<h3>Your Current Screen (CS) answers:</h3>";
@@ -329,68 +329,70 @@ echo "</tr>";
 echo "<tr>";
 echo "<td>1</td>";
 echo "<td>Interest or Pleasure</td>";
-echo "<td>$p1</td>";
+echo "<td>" . $p1. "</td>";
 echo "<td>First question of the PHQ-2, -8, and -9. Essential to a diagnosis of depression.</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<td>2</td>";
 echo "<td>Feeling down, depressed or hopeless</td>";
-echo "<td>$p2</td>";
+echo "<td>" . $p2 . "</td>";
 echo "<td>Second question of the PHQ-2, -8, and -9. Essential to a diagnosis of depression.</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<td>3</td>";
 echo "<td>Trouble falling asleep, staying asleep or sleeping too much</td>";
-echo "<td>$p3</td>";
+echo "<td>" . $p3 . "</td>";
 echo "<td>In one study, this <i>somatic</i> question proved hopeful for diagnosing sleeep disorders.</td>";
 echo "</tr>";
 
 echo "<tr>";
 echo "<td>4</td>";
 echo "<td>Feeling tired or having little energy</td>";
-echo "<td>$p4</td>";
+echo "<td>" . $p4 . "</td>";
 echo "<td>Sometimes with somatic concerns, mental health and, say, heart disease, can be hard to distinguish.</td>";
 echo "</tr>";
 
 echo "<tr>";
 echo "<td>5</td>";
 echo "<td>Poor appetite or overeating</td>";
-echo "<td>$p5</td>";
+echo "<td>" . $p5 . "</td>";
 echo "<td>Another somatic question where the border between mental health other medical conditions.</td>";
 echo "</tr>";
 
 echo "<tr>";
 echo "<td>6</td>";
 echo "<td>Feeling bad about yourself or that you are a failure or have let yourself or your family down</td>";
-echo "<td>$p6</td>";
+echo "<td>" . $p6 . "</td>";
 echo "<td>This parallels the Worthlessness domain in the Current Screen (CS). Worthlessness is <i>very relevant</i> to suicide risk.</td>";
 echo "</tr>";
 
 echo "<tr>";
 echo "<td>7</td>";
 echo "<td>Trouble concentrating on things, such as reading the newspaper or watching television.</td>";
-echo "<td>$p7</td>";
+echo "<td>" . $p7 . "</td>";
 echo "<td>Rumination - and therefore lack of ability to focus on other matters - can be a significant component of depression.</td>";
 echo "</tr>";
 
 echo "<tr>";
 echo "<td>8</td>";
 echo "<td>Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual</td>";
-echo "<td>$p8</td>";
+echo "<td>" . $p8 . "</td>";
 echo "<td></td>";
 echo "</tr>";
 
 echo "<tr>";
 echo "<td>9</td>";
 echo "<td>Thoughts that you would be better off dead or of hurting yourself in some way</td>";
-echo "<td>$p9</td>";
+echo "<td>" . $p9 . "</td>";
 echo "<td>Any score higher than 0 (Not at all) should trigger suicide risk precautions pending further assessment. The PHQ-8 leaves off this suicide ideation question. See <a href='https://www.ncbi.nlm.nih.gov/pubmed/22850254'>here</a> for an interesting explanation. Is the PHQ-9#9 a good suicide ideation question?</td>";
 echo "</tr>";
+
+$phq_total = (int)$p1 + (int)$p2 + (int)$p3 + (int)$p4 + (int)$p5 + (int)$p6 + (int)$p7 + (int)$p8 + (int)$p9;
 
 echo "<tr>";
 echo "<td><b>Total</b></td>";
 echo "<td><b>This is the total sum of scores for PHQ-9.</b></td>";
-echo "<td><b>$phq_total</b></td>";
+echo "<td><b>" . $phq_total . "</b></td>";
 echo "<td></td>";
 echo "</tr>";
 
@@ -416,7 +418,7 @@ echo "<tr>";
 echo "<td width='50%'><b>Depression Risk - <i>Current Screen</i></b></td>";
 echo "<td width='50%'><b>Depression Risk - <i>PHQ-9</i></b></td>";
 echo "</tr>";
-
+// depression risk current screen
 echo "<tr>";
 echo "<td>";
     if ($hope == "no")
@@ -427,13 +429,9 @@ echo "<td>";
 echo "</td>";
 echo "<td>";
 if ($phq_total  > 20){
-	echo "Your overall PHQ-9 score suggests you could have <i>Major Depression (Severe)</i>. As well, you may be <warning>at risk for suicide.</warning>";
+	echo "Your overall PHQ-9 score " . $phq_total . " suggests you could have <i>Major Depression (Severe)</i>. As well, you may be <b>at risk for suicide.</b>";
 	echo "A screen such as the <i>Columbia-Suicide Severity Rating Scale</i> might help determine more precisely the suicide risk level.";
-} elseif ($phq_total  > 10){
-  echo "PHQ-9 Screen: Your overall PHQ-9 score suggests you may have <i>moderate depression</i>.";
-} elseif ($phq_total < 10){
-  echo "PHQ-9 Screen: Your overall PHQ-9 score suggests that you may have mild depression if the score is between 6-9. Someone should provide resources.";
-}
+} 
 echo "</td>";
 echo "</tr>";
 echo "</table>";
@@ -451,26 +449,34 @@ echo "<td>";
  if ($suicide == "no")
   echo "<The <i>Current Screen</i> indicates you are NOT having thoughts of suicide or self-harm.";
 if ($suicide == "yes"){
-	echo "The <i>Current Screen</i> indicates you <warning>are having thoughts of suicide or self-harm</warning>. There is no clear indication about how often you have these thoughts, how recently, and if there is any suicidal behavior in your history.</h4>";
+	echo "The <i>Current Screen</i> indicates you <b>are having thoughts of suicide or self-harm</b>. There is no clear indication about how often you have these thoughts, how recently, and if there is any suicidal behavior in your history.</h4>";
 }
 echo "</td>";
 
 echo "<td>";
-if ($p9 != "not at all"){
-  echo "PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates you've had thoughts that you would be <warning>better off dead or of hurting yourself</warning> within the past two weeks.";
-  echo "A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.";
-}else {
-  echo "PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates you have not had any recent thoughts of suicide.";
+if ($p9 == "1"){
+  echo "PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates you've had thoughts that you would be <b>better off dead or of hurting yourself</b> several days within the past two weeks.";
+  echo " A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.";
+}elseif ($p9 == "2") {
+	echo "PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates you've had thoughts that you would be <b>better off dead or of hurting yourself</b> more than half days within the past two weeks.";
+    echo " A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.";
+}elseif ($p9 == "3"){
+	echo "PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates you've had thoughts that you would be <b>better off dead or of hurting yourself</b> nearly every day within the past two weeks.";
+    echo " A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.";
+}else{	
+    echo "PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates you have not had any recent thoughts of suicide.";
 }	
 echo "</td>";
+
+echo "</tr>";
 	
 echo "<tr>";
 echo "<td>";
 echo "</td>";
 echo "<td>";
 if ($phq_total > 20){
-  echo "PHQ-9 Screen Overall Score suggests you may be severely depressed. As well, you may be <warning>at risk for suicide given the high overall score.</warning>";
-  echo "A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.";  
+  echo "PHQ-9 Screen Overall Score - <b>" . $phq_total. "</b> -  suggests you may be severely depressed. As well, you may be <b>at risk for suicide given the high overall score.</b> ";
+  echo " A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.";  
 } else {"There does not appear to be any clear indicator of suicide risk. But, there is no substitute for clinical judgement. If the overall score is > 10, you should consider an order for support.";
 	
 }
