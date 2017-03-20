@@ -482,7 +482,7 @@ if ($p9 == "1"){
 	echo "<b>PHQ-9 Screen, #9 (Suicidal Ideation Question) = Positive for Suicide Risk.</b> PHQ-9 Screen, #9 (Suicidal Ideation Question) indicates you've had thoughts that you would be <b>better off dead or of hurting yourself</b> nearly every day within the past two weeks.";
     echo " Certainly, further assessment should be done. A screen such as the Columbia-Suicide Severity Rating Scale might help determine more precisely the suicide risk level.";
 }else{	
-    echo "PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates you haven't had any recent thoughts of suicide. Still, if the overall score is high, suicide risk may still be present.";
+    echo "PHQ-9 Screen, Question 9 (Suicidal Ideation Question) indicates you haven't had any recent thoughts of suicide. However, if the overall score is high, suicide risk may still be present. Use clinical judgement.";
 }	
 echo "</td>";
 
