@@ -191,9 +191,10 @@ function test_input($data) {
 <h2><center>This page is an interactive element for the presentation: <a href = "http://prezi.com/vk9vhezpdxwr/?utm_campaign=share&utm_medium=copy">A comparison of a proprietary hospital depression screening tool and the Patient Health Questionnaire (and variants)</a></center></h2> 
 <h3><center>by Michael Davis
 and Mary Muldoon at Baylor Hamilton Heart and Vascular Hospital</center></h3>
-<h3>The study compared a health care System's proprietary, current depression screen to the PHQ-9 (and it's variants, the PHQ-2 and the PHQ-8). You can take both the current screen and the PHQ-9 right here! Please do not enter anything relevant to you own personal experience. This is for demonstration purposes only. After you hit the <i>Submit Button</i>, your scores and alerts will be shown underneath the <i>Submit Button</i>.</h3>
+## change line below	
+<h3>The study compared a health care System's proprietary, current depression screen to the PHQ-9 (and it's variants, the PHQ-2 and the PHQ-8). You can fill out both the current screening tool and the PHQ-9 right here! This is for demonstration purposes only. No data will be stored. After you hit the <i>Submit Button</i>, your scores and alerts will be shown underneath the <i>Submit Button</i>.</h3>
 <hr>
-<h3>The <b>Current Screen</b> asks two questions:</h3>
+<h3>The <b>Current Screening tool</b> asks two questions:</h3>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   <table>
   <tr>
